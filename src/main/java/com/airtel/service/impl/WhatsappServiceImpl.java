@@ -30,7 +30,7 @@ public class WhatsappServiceImpl implements IWhatsappService {
     @Override
     public ResponseEntity verifyToken(String mode, String token, String challenge) {
         if (mode != null && token != null) {
-            if (mode == config.getMode() && token == config.getVerifyToken()) {
+            if (mode.equals(config.getMode()) && token.equals(config.getVerifyToken())) {
                 return new ResponseEntity<>(challenge,HttpStatus.OK);
             } else {
                 return new ResponseEntity<>(challenge,HttpStatus.FORBIDDEN);
