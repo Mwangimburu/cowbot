@@ -43,7 +43,9 @@ public class WhatsappServiceImpl implements IWhatsappService {
     @Override
     public void messageAlert(CustomerMessage message) {
         String msg = Utils.toJson(message);
-        logger.info("Message : {}", msg);
+        logger.info("alert : {}", msg);
+
+//        Javascript
 //        req.body.entry &&
 //        req.body.entry[0].changes &&
 //        req.body.entry[0].changes[0] &&
