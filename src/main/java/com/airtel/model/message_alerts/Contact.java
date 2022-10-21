@@ -2,6 +2,8 @@
 package com.airtel.model.message_alerts;
 
 import javax.annotation.Generated;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -13,6 +15,7 @@ public class Contact {
     private Profile profile;
     @SerializedName("wa_id")
     @Expose
+    @JsonProperty("wa_id")
     private String waId;
 
     public Profile getProfile() {

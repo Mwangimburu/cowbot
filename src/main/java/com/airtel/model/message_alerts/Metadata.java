@@ -2,6 +2,9 @@
 package com.airtel.model.message_alerts;
 
 import javax.annotation.Generated;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -10,9 +13,11 @@ public class Metadata {
 
     @SerializedName("display_phone_number")
     @Expose
+    @JsonProperty("display_phone_number")
     private String displayPhoneNumber;
     @SerializedName("phone_number_id")
     @Expose
+    @JsonProperty("phone_number_id")
     private String phoneNumberId;
 
     public String getDisplayPhoneNumber() {

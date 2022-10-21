@@ -7,6 +7,6 @@ public interface IWhatsappService {
 
     ResponseEntity verifyToken(String mode,String token,String challenge);
     void messageAlert(CustomerMessage message);
-    ResponseEntity sendMessage(String msisdn);
+    ResponseEntity sendMessage(String msisdn, String message);
 
 }

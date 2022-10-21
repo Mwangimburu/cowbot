@@ -44,13 +44,20 @@ public class WhatsappServiceImpl implements IWhatsappService {
     public void messageAlert(CustomerMessage message) {
         String msg = Utils.toJson(message);
         logger.info("Message : {}", msg);
+        String from = message.getEntry().get(0).getChanges().get(0).getValue().getMessages().get(0).getFrom();
+        String text = message.getEntry().get(0).getChanges().get(0).getValue().getMessages().get(0).getText().getBody();
+
+        String reply = "Hi there :). How can I help you?\n1.Get PUK\n2.Sim Registration";
+
+        sendMessage(from,reply);
+
+
+
     }
 
     @Override
-    public ResponseEntity sendMessage(String msisdn) {
+    public ResponseEntity sendMessage(String msisdn, String message) {
 
-        String message = "Hi there :)"
-                +"\nWelcome to Airtel Bot";
 
         ReplyText reply = new ReplyText();
 

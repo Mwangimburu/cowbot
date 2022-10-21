@@ -3,6 +3,9 @@ package com.airtel.model.message_alerts;
 
 import java.util.List;
 import javax.annotation.Generated;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -11,6 +14,7 @@ public class Value {
 
     @SerializedName("messaging_product")
     @Expose
+    @JsonProperty("messaging_product")
     private String messagingProduct;
     @SerializedName("metadata")
     @Expose

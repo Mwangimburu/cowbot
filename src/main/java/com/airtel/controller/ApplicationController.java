@@ -42,7 +42,7 @@ public class ApplicationController {
     public void sendText(HttpServletRequest request){
         String msisdn = request.getParameter("msisdn");
         logger.info("msisdn : {}",msisdn);
-        whatsappService.sendMessage(msisdn);
+        whatsappService.sendMessage(msisdn,"Hi there :)\nHow can I help you today?");
 
     }
 
