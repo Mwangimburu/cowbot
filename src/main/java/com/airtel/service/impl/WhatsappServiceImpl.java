@@ -31,9 +31,9 @@ public class WhatsappServiceImpl implements IWhatsappService {
     public ResponseEntity verifyToken(String mode, String token, String challenge) {
         if (mode != null && token != null) {
             if (mode.equals(config.getMode()) && token.equals(config.getVerifyToken())) {
-                return new ResponseEntity<>(challenge,HttpStatus.OK);
+                return new ResponseEntity<>(challenge, HttpStatus.OK);
             } else {
-                return new ResponseEntity<>(challenge,HttpStatus.FORBIDDEN);
+                return new ResponseEntity<>(challenge, HttpStatus.FORBIDDEN);
             }
         } else {
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
@@ -44,13 +44,26 @@ public class WhatsappServiceImpl implements IWhatsappService {
     public void messageAlert(CustomerMessage message) {
         String msg = Utils.toJson(message);
         logger.info("Message : {}", msg);
-        String from = message.getEntry().get(0).getChanges().get(0).getValue().getMessages().get(0).getFrom();
-        String text = message.getEntry().get(0).getChanges().get(0).getValue().getMessages().get(0).getText().getBody();
+//        req.body.entry &&
+//        req.body.entry[0].changes &&
+//        req.body.entry[0].changes[0] &&
+//        req.body.entry[0].changes[0].value.messages &&
+//        req.body.entry[0].changes[0].value.messages[0]
 
-        String reply = "Hi there :). How can I help you?\n1.Get PUK\n2.Sim Registration";
+        if (message.getEntry() != null &&
+                message.getEntry() != null &&
+                message.getEntry().get(0).getChanges() != null &&
+                message.getEntry().get(0).getChanges().get(0).getValue().getMessages() != null &&
+                message.getEntry().get(0).getChanges().get(0).getValue().getMessages().get(0) != null
 
-        sendMessage(from,reply);
+        ) {
+            String from = message.getEntry().get(0).getChanges().get(0).getValue().getMessages().get(0).getFrom();
+            String text = message.getEntry().get(0).getChanges().get(0).getValue().getMessages().get(0).getText().getBody();
 
+            String reply = "Hi there :). How can I help you?\n1.Get PUK\n2.Sim Registration";
+
+            sendMessage(from, reply);
+        }
 
 
     }
@@ -80,7 +93,7 @@ public class WhatsappServiceImpl implements IWhatsappService {
 
         RequestBody body = RequestBody.create(mediaType, json);
 
-        String token = "Bearer "+ config.getAccessToken();
+        String token = "Bearer " + config.getAccessToken();
 
 
         Map<String, String> headers = new HashMap<>();
@@ -88,13 +101,13 @@ public class WhatsappServiceImpl implements IWhatsappService {
         headers.put("Content-Type", "application/json");
 
         ResponseEntity response = Utils.sendRequest(body, headers, config.getWhatsappUlr(), "POST");
-        if (response.getStatusCode().equals(HttpStatus.OK)){
+        if (response.getStatusCode().equals(HttpStatus.OK)) {
             String res = Utils.toJson(response);
 
             logger.info("Response : {}", res);
-        }else {
+        } else {
             String res = Utils.toJson(response);
-            logger.info("{}",res);
+            logger.info("{}", res);
         }
 
         return response;
