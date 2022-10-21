@@ -1,6 +1,6 @@
 package com.airtel.service;
 
-import com.airtel.model.message_alerts.CustomerMessage;
+import com.airtel.model.alerts.CustomerMessage;
 import org.springframework.http.ResponseEntity;
 
 public interface IWhatsappService {

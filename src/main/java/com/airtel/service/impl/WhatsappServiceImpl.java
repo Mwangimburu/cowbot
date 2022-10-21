@@ -1,7 +1,7 @@
 package com.airtel.service.impl;
 
 import com.airtel.config.AppConfig;
-import com.airtel.model.message_alerts.CustomerMessage;
+import com.airtel.model.alerts.CustomerMessage;
 import com.airtel.model.message_response.MessageReponse;
 import com.airtel.model.reply.ReplyText;
 import com.airtel.model.reply.Text;

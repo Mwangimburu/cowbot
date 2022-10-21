@@ -1,5 +1,5 @@
 
-package com.airtel.model.message_alerts;
+package com.airtel.model.alerts;
 
 import java.util.List;
 import javax.annotation.Generated;

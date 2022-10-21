@@ -1,10 +1,9 @@
 
-package com.airtel.model.message_alerts;
+package com.airtel.model.alerts;
 
 import javax.annotation.Generated;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

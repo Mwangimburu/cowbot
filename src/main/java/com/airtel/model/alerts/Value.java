@@ -1,11 +1,10 @@
 
-package com.airtel.model.message_alerts;
+package com.airtel.model.alerts;
 
 import java.util.List;
 import javax.annotation.Generated;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -25,6 +24,9 @@ public class Value {
     @SerializedName("messages")
     @Expose
     private List<Message> messages = null;
+    @SerializedName("statuses")
+    @Expose
+    private List<Status> statuses = null;
 
     public String getMessagingProduct() {
         return messagingProduct;
@@ -56,6 +58,14 @@ public class Value {
 
     public void setMessages(List<Message> messages) {
         this.messages = messages;
+    }
+
+    public List<Status> getStatuses() {
+        return statuses;
+    }
+
+    public void setStatuses(List<Status> statuses) {
+        this.statuses = statuses;
     }
 
 }

@@ -1,5 +1,5 @@
 
-package com.airtel.model.message_alerts;
+package com.airtel.model.alerts;
 
 import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;

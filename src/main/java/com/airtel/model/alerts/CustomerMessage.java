@@ -1,11 +1,10 @@
 
-package com.airtel.model.message_alerts;
+package com.airtel.model.alerts;
 
 import java.util.List;
 import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import lombok.ToString;
 
 @Generated("jsonschema2pojo")
 public class CustomerMessage {
