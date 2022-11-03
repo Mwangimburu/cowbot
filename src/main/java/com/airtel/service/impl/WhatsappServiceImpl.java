@@ -2,7 +2,6 @@ package com.airtel.service.impl;
 
 import com.airtel.config.AppConfig;
 import com.airtel.model.alerts.CustomerMessage;
-import com.airtel.model.message_response.MessageReponse;
 import com.airtel.model.reply.ReplyText;
 import com.airtel.model.reply.Text;
 import com.airtel.service.IWhatsappService;
@@ -45,7 +44,7 @@ public class WhatsappServiceImpl implements IWhatsappService {
         String msg = Utils.toJson(message);
         logger.info("alert : {}", msg);
 
-//        Javascript
+//        Javascript.
 //        req.body.entry &&
 //        req.body.entry[0].changes &&
 //        req.body.entry[0].changes[0] &&
@@ -62,7 +61,7 @@ public class WhatsappServiceImpl implements IWhatsappService {
             String from = message.getEntry().get(0).getChanges().get(0).getValue().getMessages().get(0).getFrom();
             String text = message.getEntry().get(0).getChanges().get(0).getValue().getMessages().get(0).getText().getBody();
 
-            String reply = "Hi there :). How can I help you?\n1.Get PUK\n2.Sim Registration";
+            String reply = "Hi there :)\nHow can I help you?\n1.Get PUK\n2.Sim Registration";
 
             sendMessage(from, reply);
         }
